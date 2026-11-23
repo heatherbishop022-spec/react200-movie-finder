@@ -6,3 +6,10 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+- **State** lives in `MovieProvider` (context + reducer), split into search state and details state.
+- **`Home`** (route `/`) holds the search box text and dispatches `SEARCH_*` actions.
+- **`MoviePreview`** receives a `movie` prop; "More Information" navigates to `/movie/:id`.
+- **`MovieDetails`** (route `/movie/:id`) reads the id with `useParams` and dispatches `MOVIE_*` actions.
+- Search results stay in context, so "Back to search" shows them again.
